@@ -21,6 +21,16 @@ function debounce(callee, timeoutMs) {
     lastCallTimer = setTimeout(() => callee(...args), timeoutMs);
   };
 }
+
+// дебоунс без замерки времени
+function debounce (fn, delay) {
+  let timerId = 0 // создали переменную
+  
+  return function (...args) {
+    clearTimeout(timerId) // Почистили таймер
+    timerId = setTimeout(() => fn(...args), delay) // Положили новое значение в таймер
+  }
+};
 ```
 
 ```javascript
@@ -64,6 +74,17 @@ function throttleDate(func, wait) {
             lastCallTime = Date.now();
         }
     }
+}
+
+// тоже через Date, но попроще
+function throttle(fn, interval) {
+  let lastCallTime = 0
+  return function(...args) {
+    if((Date.now() - lastCallTime) > interval) {
+      lastCallTime = Date.now()
+      return fn(...args)
+    }
+  }
 }
 ```
 
@@ -157,4 +178,49 @@ Promise.myAll = function(promises) {
     });
   });
 };
+```
+
+### Retry
+Напишите функцию retry(fn, options), которая оборачивает асинхронную функцию fn и повторяет попытку вызова при ошибке.
+
+Требования:
+
+options.retries — максимальное число повторных попыток (например, 3).
+options.delay — задержка между попытками в мс (например, 500).
+Если все попытки исчерпаны — пробросить последнюю ошибку.
+Бонус (если успеете подумать): сделать задержку экспоненциальной (delay растёт с каждой попыткой).
+
+```javascript
+// Хелпер, должен возвращать промис
+function sleep (delay) {
+  return new Promise((resolve, rej) => {
+    setTimeout(() => {resolve()}, delay) // резолвим промис внутри таймаута
+  })
+}
+
+function retry (fn, options) {
+  return async function(...args) { // Должна возвращать функцию (а не вызывать), и передавать остальные аргументы дальше
+    let err;
+    for (let att = 0; att < options.retries; att++) { // Цикл, чтобы пройтись по всем retries
+      try {
+        return await fn(...args) // await выполнение функции (то же самое, что и Promise.then), возврщаем ее
+      } catch (error) {
+        await sleep(options.delay) // ждем выполнение таймаута
+        err = error // записываем объект ошибки в переменную
+      }
+    }
+    throw err; // если цикл провалился - возвращаем объект ошибки
+  }
+};
+
+// Пример использования:
+
+const flaky = async () => {
+  const myVar = Math.random()
+  if (myVar < 0.7) throw new Error('fail');
+  return 'success';
+};
+
+const safeFn = retry(flaky, { retries: 3, delay: 500 });
+safeFn().then(console.log).catch(console.error);
 ```

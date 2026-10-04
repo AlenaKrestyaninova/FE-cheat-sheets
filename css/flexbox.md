@@ -10,7 +10,7 @@ Flexbox (Flexible Box Layout) — это одномерная модель CSS-�
 
 Flexbox оперирует двумя осями:
 
- ![image.png](/users/a.kuzmina/css/flexbox/.files/image.png =542x228) 
+ ![image.png](images/image-1.png)
 
 **Main axis** — главная ось, вдоль которой выстраиваются flex-элементы. Направление задаётся свойством `flex-direction`: `row` (слева направо), `row-reverse`, `column` (сверху вниз), `column-reverse`.
 
@@ -48,53 +48,13 @@ Flexbox оперирует двумя осями:
 
 `flex` — сокращение для трёх свойств: `flex-grow flex-shrink flex-basis`.
 
-#|
-||
+`flex: 1` (`flex: 1 1 0`) — растёт, сжимается, базис 0
 
-Запись
+`flex: auto` (`flex: 1 1 auto`) — растёт, сжимается, базис auto
 
-|
+`flex: none` (`flex: 0 0 auto`) — не растёт, не сжимается
 
-Расшифровка
-
-||
-||
-
-`flex: 1`
-
-|
-
-`1 1 0` — растёт, сжимается, базис 0
-
-||
-||
-
-`flex: auto`
-
-|
-
-`1 1 auto` — растёт, сжимается, базис auto
-
-||
-||
-
-`flex: none`
-
-|
-
-`0 0 auto` — не растёт, не сжимается
-
-||
-||
-
-`flex: 0 1 200px`
-
-|
-
-не растёт, сжимается, базис 200px
-
-||
-|#
+`flex: 0 1 200px` - не растёт, сжимается, базис 200px
 
 Самая частая запись на практике — `flex: 1`.
 

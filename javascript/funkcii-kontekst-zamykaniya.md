@@ -62,9 +62,6 @@
     ```
 
   * **Явная привязка**: Используется call, apply, bind для задания this.
-
-    #|
-    ||
     
     **call**:
 
@@ -72,6 +69,13 @@
 
     * Синтаксис: func.call(thisArg, arg1, arg2, ...)
 
+```javascript
+    function greet(greeting) {
+      console.log(`${greeting}, ${this.name}`);
+    }
+    const obj = { name: "Alice" };
+    greet.call(obj, "Hello"); // Hello, Alice
+    ```
     |
     
     **apply**:
@@ -79,7 +83,13 @@
     * Вызывает функцию сразу, задавая this, но аргументы передаются **массивом**.
 
     * Синтаксис: func.apply(thisArg, \[arg1, arg2, ...\])
-
+```javascript
+    function greet(greeting, punctuation) {
+      console.log(`${greeting}, ${this.name}${punctuation}`);
+    }
+    const obj = { name: "Bob" };
+    greet.apply(obj, ["Hi", "!"]); // Hi, Bob!
+    ```
     |
     
     **bind**:
@@ -87,29 +97,6 @@
     * **Не вызывает** функцию сразу, а возвращает **новую функцию** с привязанным this и, при необходимости, частично заданными аргументами.
 
     * Синтаксис: const newFunc = func.bind(thisArg, arg1, arg2, ...)
-
-    ||
-    ||
-    
-    ```javascript
-    function greet(greeting) {
-      console.log(`${greeting}, ${this.name}`);
-    }
-    const obj = { name: "Alice" };
-    greet.call(obj, "Hello"); // Hello, Alice
-    ```
-
-    |
-    
-    ```javascript
-    function greet(greeting, punctuation) {
-      console.log(`${greeting}, ${this.name}${punctuation}`);
-    }
-    const obj = { name: "Bob" };
-    greet.apply(obj, ["Hi", "!"]); // Hi, Bob!
-    ```
-
-    |
     
     ```javascript
     function greet(greeting, punctuation) {
@@ -121,11 +108,6 @@
     console.log(greetHello('!')); // "Hello, Alice!"
     console.log(greetHello('?')); // "Hello, Alice?"
     ```
-
-    ||
-    |#
-    
-    &nbsp;
     
 
 * **Arrow Functions**:

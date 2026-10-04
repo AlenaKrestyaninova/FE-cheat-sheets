@@ -1,5 +1,4 @@
-# Принципы работы React (reconciliation, эвристический алгоритм, keys, Fiber,
-batching)
+# Принципы работы React (reconciliation, эвристический алгоритм, keys, Fiber, batching)
 
 # **Reconciliation**
 
@@ -15,7 +14,7 @@ batching)
 
 Reconciliation в React делится на две основные фазы:
 
-### **1)Render Phase (Reconciliation)** {#render-phase-reconciliation}
+### **1)Render Phase (Reconciliation)**
 
 1. **Инициирование обновления**
 
@@ -53,7 +52,7 @@ Reconciliation в React делится на две основные фазы:
 
 ---
 
-### **2)Commit Phase (Reconciliation применения)** \{#commit-phase-reconciliation-применения\}
+### **2)Commit Phase (Reconciliation применения)**
 
 1. **Применение изменений к реальному DOM**
 
