@@ -2,17 +2,79 @@
 
 Шпаргалки по фронтенд-теории в формате Markdown.
 
-## Разделы
+## Оглавление
 
-- [JavaScript](javascript/)
-- [React](react/)
-  - [React Hooks](react/react-hooks.md)
-- [TypeScript](typescript/)
+- [HTML](html/)
+  - [Базовая структура HTML-документа](html/base-document-structure.md)
+  - [Версии HTML](html/html-versions.md)
+  - [Глобальные атрибуты](html/global-attributes.md)
+  - [Таблицы](html/tables.md)
+  - [SEO](html/seo.md)
 - [CSS](css/)
-- [Инструменты и сборка](tools-build/)
+  - [Основные и новые свойства CSS](css/new-properties.md)
+  - [Flexbox](css/flexbox.md)
+  - [Анимации](css/animations.md)
+- [JavaScript](javascript/)
+  - [Типы данных JS, приведение типов](javascript/tipy-dannyh-js-privedenie-tipov.md)
+  - [Свойства объекта, их конфигурация](javascript/svojstva-obuekta-ih-konfiguraciya.md)
+  - [Геттеры и сеттеры, их дескрипторы](javascript/gettery-i-settery-ih-deskriptory.md)
+  - [Прототипы](javascript/prototypes.md)
+  - [Функции, контекст, замыкания](javascript/funkcii-kontekst-zamykaniya.md)
+  - [Rest и spread операторы](javascript/rest-and-spread-operators.md)
+  - [Циклы for...in и for...of](javascript/cikly-for-in-i-for-of.md)
+  - [Map и Set](javascript/map-i-set.md)
+  - [Задачи про функции, контекст, замыкание](javascript/zadachi-pro-funkcii-kontekst-zamykanie.md)
+  - [Задачи про полифилы](javascript/zadachi-pro-polifily.md)
+- [TypeScript](typescript/)
+  - [Типы данных](typescript/01-tipy-dannyh.md)
+  - [Сужение и приведение типов](typescript/02-suzhenie-i-preobrazovanie-tipov.md)
+  - [Продвинутые типы](typescript/03-prodvinutye-tipy.md)
+  - [Перегрузка функций](typescript/04-peregruzka-funkciy.md)
+- [React](react/)
+  - [Принципы работы React (reconciliation, keys, Fiber, batching)](react/principy-raboty-react-reconciliation-evristicheskij-algoritm-keys-fiber-batching.md)
+  - [React Hooks](react/react-hooks.md)
+  - [React patterns — шаблоны проектирования](react/react-patterns.md)
+  - [Code splitting — React.lazy и Suspense](react/code-splitting.md)
+  - [SSR и серверный рендеринг](react/server-side-rendering.md)
+  - [React Server Components](react/react-server-components.md)
+  - [Задачи по React](react/tasks.md)
+- [Redux](redux/)
+  - [Redux](redux/redux.md)
+  - [Redux Toolkit](redux/redux-toolkit.md)
+- [Тестирование](testing/)
+  - [Общие концепции](testing/common-concepts.md)
+  - [Unit-тесты](testing/unit-tests.md)
+  - [E2E тестирование](testing/e2e-testing.md)
+- [Сборка и инструменты разработки](build/)
+  - [Node.js, npm, package.json, .npmrc](build/nodejs-npm-packagejson-npmrc.md)
+  - [tsconfig.json](build/tsconfigjson.md)
+  - [ESLint, Prettier, Stylelint](build/eslint-prettier-stylelint.md)
+  - [Webpack](build/webpack.md)
+  - [Vite](build/vite.md)
+  - [Module Federation](build/module-federation.md)
 - [Алгоритмы](algorithms/)
+  - [Сортировка пузырьком](algorithms/bubble-sort.md)
+  - [Быстрая сортировка (Quicksort)](algorithms/quicksort.md)
+  - [Two Sum](algorithms/two-sums.md)
+  - [Валидные скобки](algorithms/braces.md)
+  - [Скользящее окно](algorithms/sliding-window.md)
+  - [Разные задачи](algorithms/random-tasks.md)
+- [Разное: браузер, сеть, принципы](rest/)
+  - [Тык в браузер (что происходит при вводе URL)](rest/tyk-v-brauzer.md)
+  - [Критический путь рендеринга](rest/kriticheskij-put-renderinga.md)
+  - [Resource Loading: управление загрузкой ресурсов](rest/resource-loading.md)
+  - [Сетевые запросы](rest/setevye-zaprosy.md)
+  - [localStorage, sessionStorage, Cookies](rest/localstorage-sessionstorage-cookies.md)
+  - [Сложность алгоритмов](rest/algorithms.md)
+  - [SOLID и другие принципы](rest/solid-and-principles.md)
+- [Собеседования](interviews/)
+  - [Вопросы и задачки с собеса 1](interviews/voprosy-i-zadachki-s-sobesa-1.md)
+
+### Служебное
+
+- [Инструменты репозитория](tools-build/) — [wiki-to-md](tools-build/wiki-to-md/), конвертер экспорта Wiki Yandex в markdown.
 
 ## Соглашения
 
 - Имена файлов — `kebab-case`, без пробелов и кириллицы.
-- Каждая новая тема добавляется в оглавление выше и (по желанию) в README своей папки.
+- Каждая новая тема добавляется в оглавление выше и в README своей папки.

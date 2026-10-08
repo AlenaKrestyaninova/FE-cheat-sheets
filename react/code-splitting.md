@@ -44,7 +44,7 @@ if (user.isAuthenticated) {
 }
 ```
 
-## Error Boundary {#introducing-error-boundaries}
+## Error Boundary
 
 — это компоненты React, которые отлавливают ошибки JavaScript в любом месте деревьев их дочерних компонентов, сохраняют их в журнале ошибок и выводят запасной UI вместо рухнувшего дерева компонентов
 
